@@ -4,7 +4,7 @@ def main():
     admission_number = "21JE0014" 
 
     print(f"\nWelcome to {name}'s Fortune Teller ({admission_number}) \n")
-    mood = input("How are you feeling today? (happy/sad/neutral/stressed): ").strip().lower()
+    mood = input("How are you feeling today? (happy/sad/neutral/stressed/excited): ").strip().lower()
 
     fortunes = {
         "happy": [
@@ -22,14 +22,18 @@ def main():
         "stressed": [
             "Breathe in. Breathe out. You've got this.",
             "Stress means you care. Don’t forget to care for yourself too, dear."
-        ]
+        ],
+        "excited": [
+            "Your enthusiasm is contagious!",
+            "Excitement is the first step to success."
+        ],
     }
 
     if mood in fortunes:
         message = random.choice(fortunes[mood])
         print(f"\nYour fortune: {message} \n")
     else:
-        print("\nHmm, I don’t know that mood. Try happy/sad/neutral/stressed.\n")
+        print("\nHmm, I don’t know that mood. Try happy/sad/neutral/stressed/excited.\n")
 
 
 if __name__ == "__main__":
