@@ -1,18 +1,36 @@
+import random
 def main():
     name = "Abhay Mittal" 
     admission_number = "21JE0014" 
 
     print(f"\nWelcome to {name}'s Fortune Teller ({admission_number}) \n")
-    mood = input("How are you feeling today? (happy/sad/neutral): ").strip().lower()
+    mood = input("How are you feeling today? (happy/sad/neutral/stressed): ").strip().lower()
 
-    if mood == "happy":
-        print(f"\nYour fortune: Happiness is contagious, {name.split()[0]}! Spread it around.")
-    elif mood == "sad":
-        print("\nYour fortune: Tough times never last, but tough people do. Stay strong!")
-    elif mood == "neutral":
-        print("\nYour fortune: Life is full of surprises—embrace the unexpected!")
+    fortunes = {
+        "happy": [
+            "You're on a roll — don’t stop now!",
+            "Good vibes ahead. Keep riding that wave, dear!"
+        ],
+        "sad": [
+            "It's okay to not be okay. Brighter days are coming.",
+            "The clouds will clear soon. Hang in there."
+        ],
+        "neutral": [
+            "Still waters run deep. Something surprising is coming.",
+            "No chaos = more clarity. Use this moment."
+        ],
+        "stressed": [
+            "Breathe in. Breathe out. You've got this.",
+            "Stress means you care. Don’t forget to care for yourself too, dear."
+        ]
+    }
+
+    if mood in fortunes:
+        message = random.choice(fortunes[mood])
+        print(f"\nYour fortune: {message} \n")
     else:
-        print("\nSorry, I can only interpret happy/sad/neutral moods at the moment.")
+        print("\nHmm, I don’t know that mood. Try happy/sad/neutral/stressed.\n")
+
 
 if __name__ == "__main__":
     main()
